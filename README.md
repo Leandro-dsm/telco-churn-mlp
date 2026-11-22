@@ -38,12 +38,13 @@ telco-churn-mlp/
 ├── requisicoes.http                # Casos de teste HTTP (Sucesso e Erro 422)
 ├── pyproject.toml                  # Configuração de dependências do UV
 └── WA_Fn-UseC_-Telco-Customer-Churn.csv # Dataset original
-
+```
 ## Como Executar o Projeto Localmente
 
 ### 1. Pré-requisitos
+```bash
 Certifique-se de ter o Python e o [UV instalados](https://docs.astral.sh/uv/getting-started/installation/) em sua máquina.
-
+```
 ### 2. Clonar o repositório e instalar dependências
 ```bash
 git clone https://github.com/Leandro-dsm/telco-churn-mlp.git
@@ -121,19 +122,3 @@ O arquivo `requisicoes.http` na raiz do projeto contém todos os cenários de te
 
 ---
 Desenvolvido por [Leandro S. Sueoka](https://github.com/Leandro-dsm) como parte da avaliação da disciplina de Aprendizagem de Máquina (FATEC).
-```
-
----
-
-### Por que este README é profissional?
-1. **Badges visuais:** As etiquetas coloridas no topo dão um ar moderno e mostram rapidamente as tecnologias usadas.
-2. **Contexto de negócio:** Ele não apenas diz "fiz um modelo", mas explica *por que* o Churn é importante.
-3. **Estrutura clara:** Separação entre "O que é", "Como rodar", "Arquitetura" e "Endpoints", facilitando a leitura de qualquer pessoa (ou do seu professor na hora de avaliar).
-4. **Exemplos reais:** Os JSONs de request e response mostram exatamente como interagir com a sua API.
-
-**Próximo passo:** Depois de salvar o arquivo, rode os comandos no terminal para subir essa atualização:
-```powershell
-git add README.md
-git commit -m "docs: adiciona README profissional"
-git push
-```
