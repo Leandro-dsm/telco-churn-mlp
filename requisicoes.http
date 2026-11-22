@@ -1,0 +1,84 @@
+### 1. Metadados
+GET http://127.0.0.1:8000/info
+User-Agent: Client-Avaliativo
+
+### 2. Predição válida — perfil A (cliente antigo, contrato longo, NÃO deve churnar)
+POST http://127.0.0.1:8000/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "SeniorCitizen": 0,
+  "tenure": 34,
+  "MonthlyCharges": 56.95,
+  "TotalCharges": 1889.5,
+  "gender": "Male",
+  "Partner": "No",
+  "Dependents": "No",
+  "PhoneService": "Yes",
+  "MultipleLines": "No",
+  "InternetService": "DSL",
+  "OnlineSecurity": "Yes",
+  "OnlineBackup": "No",
+  "DeviceProtection": "Yes",
+  "TechSupport": "No",
+  "StreamingTV": "No",
+  "StreamingMovies": "No",
+  "Contract": "One year",
+  "PaperlessBilling": "No",
+  "PaymentMethod": "Mailed check"
+}
+
+### 3. Predição válida — perfil B (cliente novo, mensal, fibra, deve churnar)
+POST http://127.0.0.1:8000/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "SeniorCitizen": 0,
+  "tenure": 8,
+  "MonthlyCharges": 99.65,
+  "TotalCharges": 820.5,
+  "gender": "Female",
+  "Partner": "No",
+  "Dependents": "No",
+  "PhoneService": "Yes",
+  "MultipleLines": "Yes",
+  "InternetService": "Fiber optic",
+  "OnlineSecurity": "No",
+  "OnlineBackup": "No",
+  "DeviceProtection": "Yes",
+  "TechSupport": "No",
+  "StreamingTV": "Yes",
+  "StreamingMovies": "Yes",
+  "Contract": "Month-to-month",
+  "PaperlessBilling": "Yes",
+  "PaymentMethod": "Electronic check"
+}
+
+### 4. Payload inválido — deve retornar HTTP 422
+POST http://127.0.0.1:8000/predict
+User-Agent: Client-Avaliativo
+Content-Type: application/json
+
+{
+  "SeniorCitizen": "muito_idoso",
+  "tenure": -5,
+  "MonthlyCharges": -10.0,
+  "TotalCharges": 100.0,
+  "gender": "Female",
+  "Partner": "No",
+  "Dependents": "No",
+  "PhoneService": "Yes",
+  "MultipleLines": "No",
+  "InternetService": "DSL",
+  "OnlineSecurity": "No",
+  "OnlineBackup": "No",
+  "DeviceProtection": "No",
+  "TechSupport": "No",
+  "StreamingTV": "No",
+  "StreamingMovies": "No",
+  "Contract": "Month-to-month",
+  "PaperlessBilling": "Yes",
+  "PaymentMethod": "Electronic check"
+}
